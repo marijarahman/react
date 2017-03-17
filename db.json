@@ -1,0 +1,58 @@
+{
+  "todos": [
+    {
+      "id": 3,
+      "name": "Connect to Server",
+      "isComplete": false
+    },
+    {
+      "id": 4,
+      "name": "Setup fetch",
+      "isComplete": false
+    },
+    {
+      "name": "New Todo",
+      "isComplete": false,
+      "id": 3226
+    },
+    {
+      "name": "Brand new ",
+      "isComplete": true,
+      "id": 63409
+    },
+    {
+      "name": "msg test",
+      "isComplete": false,
+      "id": 85240
+    },
+    {
+      "name": "dsd",
+      "isComplete": false,
+      "id": 52465
+    },
+    {
+      "name": "d",
+      "isComplete": false,
+      "id": 5892
+    },
+    {
+      "name": "fds",
+      "isComplete": false,
+      "id": 18611
+    }
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "name": "Group 1"
+    },
+    {
+      "id": 2,
+      "name": "Group 2"
+    },
+    {
+      "id": 3,
+      "name": "Group 3"
+    }
+  ]
+}

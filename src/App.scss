@@ -1,0 +1,240 @@
+@font-face {
+  font-family: 'HelveticaNeue-Thin';
+  src: url('./assets/fonts/HelveticaNeue-Thin.otf');
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-ThinCond';
+  src: url('./assets/fonts/HelveticaNeue-ThinCond.otf');
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-ThinCondObl';
+  src: url('./assets/fonts/HelveticaNeue-ThinCondObl.otf');
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-ThinExtObl';
+  src: url('./assets/fonts/HelveticaNeue-ThinExtObl.otf');
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-ThinItalic';
+  src: url('./assets/fonts/HelveticaNeue-ThinItalic.otf');
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-ThinExt';
+  src: url('./assets/fonts/HelveticaNeue-ThinExt.otf');
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: HelveticaNeue-Thin;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.sidebar {
+  padding: 0 25px;
+  width: 30%;
+}
+
+.main-content {
+  padding: 0 25px;
+  width: 70%;
+}
+
+.Todo-App {
+  display: flex;
+}
+
+.header {
+  border-bottom: 1px solid #ccc;
+  overflow: auto;
+  padding: 10px;
+}
+
+.header__current-time {
+  display: inline-block;
+  margin: 1em 0;
+}
+
+.navigation {
+  display: inline-block;
+  float: right;
+}
+
+.navigation__item {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+.navigation__link {
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.form__row {
+  padding: 15px 0;
+}
+
+.form__label {
+  display: block;
+  padding-bottom: 10px;
+}
+
+.form__input {
+  border: none;
+  border-bottom: 1px solid #0099cc;
+  font-family: HelveticaNeue-Thin;
+  outline: none;
+  width: 100%;
+}
+
+.form__select {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #0099cc;
+  font-family: HelveticaNeue-Thin;
+  outline: none;
+  padding: 5px 5px 5px 0;
+}
+
+.form__select--full-width {
+  width: 100%;
+}
+
+.form__option {
+  padding: 5px;
+  &:checked {
+    font-weight: bold;
+  }
+}
+
+.todo-list {
+  list-style-position: inside;
+  padding: 0;
+}
+
+.todo-list__item {
+  padding: 5px 5px 5px 0;
+  span {
+    padding-right: 7px;
+  }
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 8px 15px;
+}
+
+.button--transparent {
+  border: 1px solid #ccc;
+}
+
+.button--confirm {
+  background-color: #0099cc;
+  color: #fff;
+}
+
+.text--primary-color {
+  color: #0099cc;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+ul {
+  list-style-type: none;
+}
+
+.notification {
+  border-radius: 5px;
+  color: #fff;
+  padding: 15px 35px;
+  position: fixed;
+  right: 50px;
+  top: 50px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  span {
+    cursor: pointer;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  margin: 0;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown__item {
+  padding: 10px 0;
+}
+
+.dropdown__link {
+  color: #0099cc;
+  text-decoration: none;
+}
+
+.notification--error {
+  background-color: red;
+}
+
+.notification--success {
+  background-color: green;
+}
+
+li span.delete-item {
+  visibility: hidden;
+}
+
+span.delete-item a {
+  text-decoration: none;
+  color: red;
+}
+
+li:hover span.delete-item {
+  visibility: visible;
+}
+
+.footer a {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.footer a.active {
+  font-weight: bold;
+}
+
