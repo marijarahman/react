@@ -1,0 +1,30 @@
+@import "../base/color";
+
+.todo-list {
+  list-style-position: inside;
+  padding: 0;
+
+  &__item {
+    padding: 5px 5px 5px 0;
+    span {
+      padding-right: 7px;
+    }
+  }
+  &__time {
+    color: $primary-color;
+  }
+
+  &__number {
+    color: $grey-color;
+    font-size: 12px;
+    margin-left: 7px;
+  }
+  &__date {
+    color: $primary-color;
+    text-decoration: none;
+  }
+
+  &__row {
+    margin: 12px 0;
+  }
+}

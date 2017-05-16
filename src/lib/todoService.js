@@ -27,15 +27,11 @@ export const saveTodo = (todo) => {
 };
 
 export const destroyTodo = (id) => {
-    return fetch(`${baseUrl}/todos/${id}`, {
+    return fetch(`${baseUrl}todos/${id}`, {
         method: 'DELETE',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         }
     });
-};
-
-export const loadGroups = () => {
-    return fetch(baseUrl + 'groups').then(response => response.json());
 };

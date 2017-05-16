@@ -1,0 +1,26 @@
+@import "../base/color";
+@import "../base/typography";
+
+.button {
+  background-color: transparent;
+  border: none;
+  border-radius: 3px;
+  font-family: $primary-font;
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 8px 15px;
+
+  &--transparent {
+    border: 1px solid $grey-color;
+  }
+
+  &--confirm {
+    background-color: $primary-color;
+    color: $white-color;
+  }
+}
+
+.delete-item a {
+  text-decoration: none;
+  color: $warning-color
+}

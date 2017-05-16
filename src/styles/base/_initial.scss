@@ -1,0 +1,67 @@
+@import "../utils/animation";
+@import "../utils/mixin";
+@import "./color";
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html,
+body {
+  color: #202020;
+  margin: 0;
+}
+
+#root {
+  background-color: $background-color;
+}
+
+.width--full {
+  width: 100%;
+}
+
+.height--full {
+  height: 100%;
+}
+
+.Todo-App {
+  display: flex;
+  margin: 0 auto;
+  max-width: 950px;
+  @include breakpoint(sm) {
+    flex-direction: column;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+.sidebar {
+  padding: 0 25px;
+  width: 30%;
+  @include breakpoint(sm) {
+    width: 100%;
+  }
+}
+
+div[data-reactroot] {
+  height: 100%;
+}
+
+.main-content {
+  background-color: $white-color;
+  padding: 0 25px;
+  width: 70%;
+  @include breakpoint(sm) {
+    width: 100%;
+  }
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 45px;
+  vertical-align: middle;
+}

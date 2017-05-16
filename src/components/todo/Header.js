@@ -1,16 +1,15 @@
 import React from 'react';
+import logo from '../../images/logo.svg';
+import moment from 'moment';
 
 export const Header = () => {
-    const currentTime = new Date().toDateString();
-    const openNewTodo = () => {  };
+    const currentTime = moment().format('dddd, MMM Do YYYY');
     return (
         <header className="header">
             <span className="header__current-time">{currentTime}</span>
-            <navigation className="navigation">
-                <ul>
-                    <li className="navigation__item"><a className="navigation__link" href="">Logout</a></li>
-                </ul>
-            </navigation>
+            <div className="header__logo">
+                <img src={logo} className="App-logo" alt="logo" />
+            </div>
         </header>
     )
 };

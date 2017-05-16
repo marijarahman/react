@@ -3,13 +3,14 @@ import './App.css';
 import {ToDoForm, ToDoList, Header} from './components/todo/index';
 import {addToDo, generateNumber, findById, toggleTodo, updateTodo, removeTodo, filterTodos,} from './lib/todoHelpers';
 import {pipe, partial} from './lib/utils';
-import {loadTodos, createTodo, saveTodo, destroyTodo, loadGroups} from './lib/todoService';
+import {loadTodos, createTodo, saveTodo, destroyTodo} from './lib/todoService';
+import moment from 'moment';
 
 class App extends Component {
     state = {
         todos: [],
         currentToDo: '',
-        groups: []
+        startDate: moment()
     };
 
     static contextTypes = {
@@ -18,7 +19,17 @@ class App extends Component {
 
     componentDidMount() {
         loadTodos().then(todos => this.setState({todos}));
-        loadGroups().then(groups => this.setState({groups}));
+    }
+
+    componentDidUpdate() {
+        const currentDate = moment().format('LL');
+        this.state.todos.forEach(todo => {
+            if (currentDate > moment(todo.startDate).format('LL')) {
+                destroyTodo(todo.id);
+            } else if (currentDate === moment(todo.startDate).format('LL')) {
+                //alert('its today');
+            }
+        })
     }
 
     handleRemove = (id, evt) => {
@@ -44,6 +55,7 @@ class App extends Component {
         const newId = generateNumber();
         const newTodo = {
             name: this.state.currentToDo,
+            startDate: this.state.startDate,
             isComplete: false,
             id: newId
         };
@@ -53,13 +65,7 @@ class App extends Component {
             currentToDo: '',
             errorMessage: ''
         });
-
         createTodo(newTodo).then(() => this.showTempMessage('Todo added'));
-    };
-
-    showTempMessage = (msg) => {
-        this.setState({message: msg});
-        setTimeout(() => this.setState({message: ''}), 2500);
     };
 
     handleInputChange = (evt) => {
@@ -75,20 +81,32 @@ class App extends Component {
         })
     };
 
+    handleDateChange = (date) => {
+        this.setState({
+            startDate: date
+        })
+    };
+
+    showTempMessage = (msg) => {
+        this.setState({message: msg});
+        setTimeout(() => this.setState({message: ''}), 2500);
+    };
+
     render() {
         // conditional applying function whether is to do name provided
         const submitHandler = this.state.currentToDo ? this.handleSubmit : this.handleEmptySubmit;
         const displayTodos = filterTodos(this.state.todos, this.context.route);
 
         return (
-            <div className="app">
+            <div className="app width--full height--full">
                 <Header/>
-                <div className="Todo-App">
+                <div className="Todo-App height--full width--full">
                     {this.state.errorMessage && <span className="notification notification--error">{this.state.errorMessage}</span>}
                     {this.state.message && <span className="notification notification--success">{this.state.message}</span>}
                     <ToDoForm handleInputChange={this.handleInputChange}
                               currentToDo={this.state.currentToDo}
-                              groups={this.state.groups}
+                              startDate={this.state.startDate}
+                              handleDateChange={this.handleDateChange}
                               handleSubmit={submitHandler}/>
                     <ToDoList todos={displayTodos}
                               handleToggle={this.handleToggle}

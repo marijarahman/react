@@ -1,0 +1,42 @@
+@import "./color";
+
+$primary-font: 'HelveticaNeue-Thin';
+
+@font-face {
+  font-family: $primary-font;
+  src: url('./assets/fonts/HelveticaNeue-Thin.otf');
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-ThinCond';
+  src: url('./assets/fonts/HelveticaNeue-ThinCond.otf');
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-ThinCondObl';
+  src: url('./assets/fonts/HelveticaNeue-ThinCondObl.otf');
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-ThinExtObl';
+  src: url('./assets/fonts/HelveticaNeue-ThinExtObl.otf');
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-ThinItalic';
+  src: url('./assets/fonts/HelveticaNeue-ThinItalic.otf');
+}
+
+@font-face {
+  font-family: 'HelveticaNeue-ThinExt';
+  src: url('./assets/fonts/HelveticaNeue-ThinExt.otf');
+}
+
+html,
+body {
+  font-family: HelveticaNeue-Thin;
+}
+
+.text--primary-color {
+  color: $primary-color;
+}

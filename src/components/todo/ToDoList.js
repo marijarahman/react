@@ -4,7 +4,7 @@ import {Footer} from './Footer';
 
 export const ToDoList = (props) => {
     return (
-        <div className="main-content">
+        <div className="main-content height--full">
             <h2 className="text--primary-color">To do list</h2>
             <Footer/>
             <ol className="todo-list">

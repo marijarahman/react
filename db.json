@@ -1,58 +1,52 @@
 {
   "todos": [
     {
-      "id": 3,
-      "name": "Connect to Server",
-      "isComplete": false
-    },
-    {
-      "id": 4,
-      "name": "Setup fetch",
-      "isComplete": false
-    },
-    {
-      "name": "New Todo",
+      "name": "frdsf",
+      "startDate": "2017-05-17T13:04:32.000Z",
       "isComplete": false,
-      "id": 3226
+      "id": 13787
     },
     {
-      "name": "Brand new ",
-      "isComplete": true,
-      "id": 63409
-    },
-    {
-      "name": "msg test",
+      "name": "Today TODO",
+      "startDate": "2017-05-16T11:43:52.187Z",
       "isComplete": false,
-      "id": 85240
+      "id": 59382
     },
     {
-      "name": "dsd",
+      "name": "21212",
+      "startDate": "2017-05-16T15:15:08.945Z",
       "isComplete": false,
-      "id": 52465
+      "id": 79853
     },
     {
-      "name": "d",
+      "name": "21212",
+      "startDate": "2017-05-16T15:15:08.945Z",
       "isComplete": false,
-      "id": 5892
+      "id": 70771
     },
     {
-      "name": "fds",
+      "name": "21212",
+      "startDate": "2017-05-16T15:15:08.945Z",
       "isComplete": false,
-      "id": 18611
-    }
-  ],
-  "groups": [
-    {
-      "id": 1,
-      "name": "Group 1"
+      "id": 60076
     },
     {
-      "id": 2,
-      "name": "Group 2"
+      "name": "1",
+      "startDate": "2017-05-16T15:15:08.945Z",
+      "isComplete": false,
+      "id": 19979
     },
     {
-      "id": 3,
-      "name": "Group 3"
+      "name": "1",
+      "startDate": "2017-05-16T15:15:08.945Z",
+      "isComplete": false,
+      "id": 33281
+    },
+    {
+      "name": "1",
+      "startDate": "2017-05-16T15:15:08.945Z",
+      "isComplete": false,
+      "id": 64619
     }
   ]
 }

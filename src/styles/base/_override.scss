@@ -1,0 +1,12 @@
+@import "typography";
+
+.react-datepicker__input-container {
+  font-family: $primary-font;
+  margin-top: 15px;
+  width: 100%;
+
+  input {
+    font-family: $primary-font;
+    width: 100%;
+  }
+}

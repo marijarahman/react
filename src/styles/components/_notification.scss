@@ -1,0 +1,16 @@
+.notification {
+  border-radius: 5px;
+  color: $white-color;
+  padding: 15px 35px;
+  position: fixed;
+  right: 50px;
+  top: 50px;
+
+  &--error {
+    background-color: red;
+  }
+
+  &--success {
+    background-color: green;
+  }
+}

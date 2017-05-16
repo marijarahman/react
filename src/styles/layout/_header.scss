@@ -1,0 +1,32 @@
+@import "../base/color";
+@import "../utils/mixin";
+
+.header {
+  background-color: $primary-color;
+  border-bottom: 1px solid $grey-color;
+  color: $white-color;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &__current-time {
+    display: inline-block;
+    margin: 1em 0;
+  }
+
+  &__logo {
+    width: 85%;
+    display: inline-block;
+    text-align: center;
+
+    @include breakpoint(sm) {
+      width: 100%;
+    }
+  }
+
+  @include breakpoint(sm) {
+    text-align: center;
+  }
+}

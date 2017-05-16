@@ -6,7 +6,7 @@ export const Footer = () => {
     <div className="form__row">
         <div className="dropdown">
             <span>Filter todos</span>
-            <ul className="dropdown-content">
+            <ul className="dropdown__content">
                 <li className="dropdown__item"><Link to="/">All</Link></li>
                 <li className="dropdown__item"><Link to="/active">Active</Link></li>
                 <li className="dropdown__item"><Link to="/complete">Complete</Link></li>
