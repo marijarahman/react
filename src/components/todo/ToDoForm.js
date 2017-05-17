@@ -5,7 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 export class ToDoForm extends React.Component {
     render() {
         return (
-            <aside className="sidebar">
+            <div>
                 <h1 className="text--primary-color">Create New To do</h1>
                 <form className="form" onSubmit={this.props.handleSubmit}>
                     <div className="form__row">
@@ -23,16 +23,7 @@ export class ToDoForm extends React.Component {
                         <button className="button button--confirm">Save</button>
                     </div>
                 </form>
-
-                <div className="todo-list__row">
-                    <a href="" className="todo-list__date">Today</a>
-                    <span className="todo-list__number">(1)</span>
-                </div>
-                <div className="todo-list__row">
-                    <a href="" className="todo-list__date">Next 7 days</a>
-                    <span className="todo-list__number">(4)</span>
-                </div>
-            </aside>
+            </div>
         )
     }
 }

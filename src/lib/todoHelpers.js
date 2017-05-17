@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export const addToDo = (list, item) => [...list, item];
 
 export const generateNumber = () => Math.floor(Math.random() * 100000);
@@ -24,6 +26,7 @@ export const removeTodo = (list, id) => {
 };
 
 export const filterTodos = (list, route) => {
+    const currentDate = moment().format('LL');
     switch (route) {
         case '/active':
             if (!list.filter(item => !item.isComplete).length) {
@@ -37,6 +40,10 @@ export const filterTodos = (list, route) => {
             } else {
                 return list.filter(item => item.isComplete);
             }
+        case '/today':
+            return list.filter(item => moment(item.startDate).format('LL') === currentDate);
+        case '/other':
+            return list.filter(item => moment(item.startDate).format('LL') !== currentDate);
         default:
             return list;
     }

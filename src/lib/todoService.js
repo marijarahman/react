@@ -16,7 +16,7 @@ export const createTodo = (todo) => {
 };
 
 export const saveTodo = (todo) => {
-    return fetch(`${baseUrl}/todos/${todo.id}`, {
+    return fetch(`${baseUrl}todos/${todo.id}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json',
