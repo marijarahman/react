@@ -15,6 +15,15 @@ const getCurrentPath = () => {
  * @return {string} - HTML markup for the component
  */
 export class Router extends Component {
+    constructor() {
+        super();
+        this.state = {
+            route: '/'
+        };
+
+        history.pushState(null, '', this.state.route);
+    }
+
     state = {
       route: getCurrentPath()
     };

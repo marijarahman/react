@@ -32,4 +32,7 @@
     color: $primary-color;
     text-decoration: none;
   }
+  .active {
+    color: $warning-color;
+  }
 }
