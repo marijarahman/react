@@ -2,6 +2,11 @@ import React from 'react';
 import {Link} from '../router/Link';
 import moment from 'moment';
 
+/**
+ * Renders the component.
+ * @param props {object}
+ * @return {string} - HTML markup for the component
+ */
 export const ToDoDates = (props) => {
     const currentDate = moment().format('LL');
     const todayTodosLength = props.todos.filter(item => moment(item.startDate).format('LL') === currentDate).length;

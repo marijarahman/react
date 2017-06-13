@@ -2,6 +2,11 @@ import React from 'react';
 import {partial} from '../../lib/utils';
 import moment from 'moment';
 
+/**
+ * Renders the component.
+ * @param props {object}
+ * @return {string} - HTML markup for the component
+ */
 export const ToDoItem = (props) => {
     const handleToggle = partial(props.handleToggle.bind(null, props.id));
     const handleRemove = partial(props.handleRemove, props.id);

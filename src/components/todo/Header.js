@@ -2,6 +2,11 @@ import React from 'react';
 import logo from '../../images/logo.svg';
 import moment from 'moment';
 
+/**
+ * Renders the component.
+ *
+ * @return {string} - HTML markup for the component
+ */
 export const Header = () => {
     const currentTime = moment().format('dddd, MMM Do YYYY');
     return (

@@ -2,6 +2,11 @@ import React from 'react';
 import {ToDoItem} from './ToDoItem';
 import {Footer} from './Footer';
 
+/**
+ * Renders the component.
+ * @param props {object}
+ * @return {string} - HTML markup for the component
+ */
 export const ToDoList = (props) => {
     return (
         <div className="main-content height--full">

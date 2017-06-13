@@ -1,6 +1,11 @@
 import React from 'react';
 import {Link} from '../router';
 
+/**
+ * Renders the component.
+ *
+ * @return {string} - HTML markup for the component
+ */
 export const Footer = () => {
     return (
     <div className="form__row">

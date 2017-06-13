@@ -2,6 +2,10 @@ import React from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
+/**
+ * @class ToDoFrom
+ * @return {string} - HTML markup for the component
+ */
 export class ToDoForm extends React.Component {
     render() {
         return (
