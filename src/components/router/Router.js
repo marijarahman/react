@@ -29,6 +29,15 @@ export class Router extends Component {
     };
 
     /**
+     *
+     * @type {{route, linkHandler: (*)}}
+     */
+    static childContextTypes = {
+        route: React.PropTypes.string,
+        linkHandler: React.PropTypes.func
+    };
+
+    /**
      * @function handleLinkClick
      * @description set route state to current route
      * @param route {string}
@@ -36,15 +45,6 @@ export class Router extends Component {
     handleLinkClick = (route) => {
         this.setState({route});
         history.pushState(null, '', route);
-    };
-
-    /**
-     *
-     * @type {{route, linkHandler: (*)}}
-     */
-    static childContextTypes = {
-        route: React.PropTypes.string,
-        linkHandler: React.PropTypes.func
     };
 
     /**
