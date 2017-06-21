@@ -17,27 +17,37 @@ class App extends Component {
         route: React.PropTypes.string
     };
 
+    componentWillMount() {
+        loadTodos().then(todos => this.setState({todos}));
+    }
+
     /**
      * @function componentDidMount
      * @description React lifecycle method - is invoked immediately after a component is mounted
      */
     componentDidMount() {
-        loadTodos().then(todos => this.setState({todos}));
-    }
-
-    /**
-     * @function componentDidUpdate
-     * @description React lifecycle method - is invoked immediately after updating occurs.
-     */
-    componentDidUpdate() {
         const currentDate = moment().format('LL');
 
-        console.log(moment(currentDate).isAfter(this.state.todos[0], 'year'));
         this.state.todos.forEach(todo => {
-            if (currentDate > moment(todo.startDate).format('LL')) {
+            if (moment(currentDate).isAfter(todo.startDate, 'day')) {
                 return destroyTodo(todo.id);
             }
         })
+    }
+
+    /**
+     * @function _checkTodoTime
+     * @param todo {object}
+     * @return {boolean}
+     * @private
+     */
+    _checkTodoTime(todo) {
+        const currentDate = moment().format('LL');
+        if (moment(currentDate).isAfter(todo.startDate, 'day')) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -83,13 +93,19 @@ class App extends Component {
             isComplete: false,
             id: newId
         };
-        const updatedToDos = addToDo(this.state.todos, newTodo);
-        this.setState({
-            todos: updatedToDos,
-            currentToDo: '',
-            errorMessage: ''
-        });
-        createTodo(newTodo).then(() => this.showTempMessage('Todo added'));
+        if (this._checkTodoTime(newTodo)) {
+            this.setState({
+                currentTodo: ''
+            });
+            this.showErrorMessage('Todo start date is in past!');
+        } else {
+            let updatedToDos = addToDo(this.state.todos, newTodo);
+            this.setState({
+                todos: updatedToDos,
+                currentToDo: ''
+            });
+            createTodo(newTodo).then(() => this.showTempMessage('Todo added'));
+        }
     };
 
     /**
@@ -110,9 +126,7 @@ class App extends Component {
      */
     handleEmptySubmit = (evt) => {
         evt.preventDefault();
-        this.setState({
-            errorMessage: 'Please provide a todo name'
-        })
+        this.showErrorMessage('Please provide a todo name')
     };
 
     /**
@@ -136,6 +150,11 @@ class App extends Component {
         setTimeout(() => this.setState({message: ''}), 2500);
     };
 
+    showErrorMessage = (msg) => {
+        this.setState({errorMessage: msg});
+        setTimeout(() => this.setState({errorMessage: ''}), 2500);
+    };
+
     /**
      * Renders the component.
      *
@@ -150,8 +169,10 @@ class App extends Component {
             <div className="app width--full height--full">
                 <Header/>
                 <div className="Todo-App height--full width--full">
-                    {this.state.errorMessage && <span className="notification notification--error">{this.state.errorMessage}</span>}
-                    {this.state.message && <span className="notification notification--success">{this.state.message}</span>}
+                    {this.state.errorMessage &&
+                    <span className="notification notification--error">{this.state.errorMessage}</span>}
+                    {this.state.message &&
+                    <span className="notification notification--success">{this.state.message}</span>}
                     <Sidebar>
                         <ToDoForm handleInputChange={this.handleInputChange}
                                   currentToDo={this.state.currentToDo}

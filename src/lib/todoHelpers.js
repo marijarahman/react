@@ -72,13 +72,13 @@ export const filterTodos = (list, route) => {
     switch (route) {
         case '/active':
             if (!list.filter(item => !item.isComplete).length) {
-                return 'There is no active todos';
+                return [];
             } else {
                 return list.filter(item => !item.isComplete);
             }
         case '/complete':
             if (!list.filter(item => item.isComplete).length) {
-                return 'There is no completed todos';
+                return [];
             } else {
                 return list.filter(item => item.isComplete);
             }
